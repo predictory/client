@@ -1,10 +1,19 @@
 import { Configuration } from '@nuxt/types';
+const config = require('config');
 
-const config: Configuration = {
+const client: any = config.get('client');
+const api: any = config.get('api');
+const url = `http://${api.host}:${api.port}`;
+
+const nuxtConfig: Configuration = {
     mode: 'universal',
     typescript: {
         typeCheck: true,
         ignoreNotFoundWarnings: true
+    },
+    server: {
+        port: client.port,
+        host: client.host
     },
     /*
      ** Headers of the page
@@ -60,7 +69,9 @@ const config: Configuration = {
      ** Axios module configuration
      ** See https://axios.nuxtjs.org/options
      */
-    axios: {},
+    axios: {
+        baseURL: url
+    },
     /*
      ** Build configuration
      */
@@ -77,4 +88,4 @@ const config: Configuration = {
     }
 };
 
-export default config;
+export default nuxtConfig;
