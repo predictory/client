@@ -1,31 +1,12 @@
-<template>
-    <div class="container">
-        <div>
-            <logo />
-            <h1 class="title">
-                client
-            </h1>
-            <h2 class="subtitle">
-                Client for Predictory App
-            </h2>
-            <div class="links">
-                <a
-                    href="https://nuxtjs.org/"
-                    target="_blank"
-                    class="button--green"
-                >
-                    Documentation
-                </a>
-                <a
-                    href="https://github.com/nuxt/nuxt.js"
-                    target="_blank"
-                    class="button--grey"
-                >
-                    GitHub
-                </a>
-            </div>
-        </div>
-    </div>
+<template lang="pug">
+    div.container
+        div
+            logo
+            h1.title Client
+            h2.subtitle Client for Predictory App
+            div.links
+                a(href="https://nuxtjs.org/", target="_blank", class="button--green") Documentation
+                a(href="https://github.com/nuxt/nuxt.js", target="_blank", class="button--grey") GitHub
 </template>
 
 <script>
@@ -57,7 +38,7 @@ export default class Index extends Vue {}
     display: block;
     font-weight: 300;
     font-size: 100px;
-    color: #35495e;
+    color: $base-color;
     letter-spacing: 1px;
 }
 

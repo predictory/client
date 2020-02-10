@@ -53,7 +53,8 @@ const config: Configuration = {
     modules: [
         // Doc: https://axios.nuxtjs.org/usage
         '@nuxtjs/axios',
-        '@nuxtjs/pwa'
+        '@nuxtjs/pwa',
+        '@nuxtjs/style-resources'
     ],
     /*
      ** Axios module configuration
@@ -67,6 +68,12 @@ const config: Configuration = {
         /*
          ** You can extend webpack config here
          */
+    },
+    /*
+     ** Style resources
+     */
+    styleResources: {
+        scss: './assets/css/variables.scss'
     }
 };
 
