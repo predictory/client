@@ -1,0 +1,13 @@
+@import "variables";
+
+.form .ant-input {
+    background-color: #1f2329;
+    border: 1px solid $dark-color;
+    color: $dark-color;
+}
+.form .ant-input::placeholder {
+    color: $dark-color;
+}
+.form .ant-input-affix-wrapper .ant-input-prefix {
+    color: $dark-color;
+}

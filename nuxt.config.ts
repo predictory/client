@@ -19,7 +19,7 @@ const nuxtConfig: Configuration = {
      ** Headers of the page
      */
     head: {
-        title: process.env.npm_package_name || '',
+        titleTemplate: '%s | Predictory',
         meta: [
             { charset: 'utf-8' },
             {
@@ -41,7 +41,7 @@ const nuxtConfig: Configuration = {
     /*
      ** Global CSS
      */
-    css: ['ant-design-vue/dist/antd.css'],
+    css: ['ant-design-vue/dist/antd.css', './assets/css/global.scss'],
     /*
      ** Plugins to load before mounting the App
      */
@@ -50,9 +50,7 @@ const nuxtConfig: Configuration = {
      ** Nuxt.js dev-modules
      */
     buildModules: [
-        // Doc: https://github.com/nuxt-community/eslint-module
         '@nuxtjs/eslint-module',
-        // Doc: https://github.com/nuxt-community/stylelint-module
         '@nuxtjs/stylelint-module',
         '@nuxt/typescript-build'
     ],
@@ -60,10 +58,10 @@ const nuxtConfig: Configuration = {
      ** Nuxt.js modules
      */
     modules: [
-        // Doc: https://axios.nuxtjs.org/usage
         '@nuxtjs/axios',
         '@nuxtjs/pwa',
-        '@nuxtjs/style-resources'
+        '@nuxtjs/style-resources',
+        '@nuxtjs/auth'
     ],
     /*
      ** Axios module configuration
@@ -72,19 +70,37 @@ const nuxtConfig: Configuration = {
     axios: {
         baseURL: url
     },
+    auth: {
+        strategies: {
+            local: {
+                endpoints: {
+                    login: {
+                        url: '/auth/login',
+                        method: 'post',
+                        propertyName: 'accessToken'
+                    },
+                    logout: false,
+                    user: {
+                        url: '/users/me',
+                        method: 'get',
+                        propertyName: false
+                    }
+                }
+            }
+        }
+    },
     /*
      ** Build configuration
      */
-    build: {
-        /*
-         ** You can extend webpack config here
-         */
-    },
+    build: {},
     /*
      ** Style resources
      */
     styleResources: {
         scss: './assets/css/variables.scss'
+    },
+    router: {
+        middleware: ['auth']
     }
 };
 

@@ -16,6 +16,9 @@ import Logo from '~/components/Logo.vue';
 @Component({
     components: {
         Logo
+    },
+    head: {
+        title: 'Home'
     }
 })
 export default class Index extends Vue {}

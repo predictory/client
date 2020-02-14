@@ -19,8 +19,9 @@ module.exports = {
         'no-console': 'off',
         'vue/max-attributes-per-line': 'off',
         'prettier/prettier': ['error', { 'semi': true }],
-        "indent": ["error", 4],
-        "vue/html-indent": ["error", 4],
-        "vue/script-indent": ["error", 4]
+        'indent': ['error', 4],
+        'vue/html-indent': ['error', 4],
+        'vue/script-indent': ['error', 4],
+        'require-await': 'off'
     }
 };
