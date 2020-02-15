@@ -6,13 +6,13 @@
 </template>
 
 <style lang="scss" scoped>
-.ant-layout,
-.ant-layout-content {
-    height: 100%;
-    background: $dark-background;
+    .ant-layout,
+    .ant-layout-content {
+        height: 100%;
+        background: $dark-background;
 
-    .row {
-        height: 100vh;
+        .row {
+            height: 100vh;
+        }
     }
-}
 </style>

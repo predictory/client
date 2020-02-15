@@ -7,16 +7,16 @@
 </template>
 
 <style lang="scss">
-.NuxtLogo {
-    animation: 1s appear;
-}
+    .NuxtLogo {
+        animation: 1s appear;
+    }
 
-@keyframes appear {
-    0% {
-        opacity: 0;
+    @keyframes appear {
+        0% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
+        }
     }
-    100% {
-        opacity: 1;
-    }
-}
 </style>
