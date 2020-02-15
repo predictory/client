@@ -1,13 +1,25 @@
 @import "variables";
 
-.form .ant-input {
-    background-color: #1f2329;
-    border: 1px solid $dark-color;
-    color: $dark-color;
-}
-.form .ant-input::placeholder {
-    color: $dark-color;
-}
-.form .ant-input-affix-wrapper .ant-input-prefix {
-    color: $dark-color;
+.auth-form {
+    .ant-input {
+        background-color: #1f2329;
+        border: 1px solid $dark-color;
+        color: $dark-color;
+    }
+
+    .ant-input::placeholder {
+        color: $dark-color;
+    }
+
+    .ant-input-affix-wrapper .ant-input-prefix {
+        color: $dark-color;
+    }
+
+    .header {
+        h1 {
+            color: white;
+            padding: 0 0 $form-padding 0;
+            margin: 0;
+        }
+    }
 }

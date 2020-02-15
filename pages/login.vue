@@ -1,5 +1,5 @@
 <template lang="pug">
-    a-col(:span="7", class="form")
+    a-col(:xl="4", :lg="6", :md="8", :sm="12", class="auth-form")
         div(class="header")
             h1 Login
         a-form(:form="form", @submit.prevent="handleSubmit")
@@ -79,13 +79,3 @@
         }
     }
 </script>
-
-<style lang="scss" scoped>
-    .header {
-        h1 {
-            color: white;
-            padding: 0 0 $form-padding 0;
-            margin: 0;
-        }
-    }
-</style>

@@ -2,7 +2,7 @@
     "name": "client",
     "version": "1.0.0",
     "description": "Client for Predictory App",
-    "author": "Vladimir Fojtik &lt;fojtik.v@gmail.com&gt;",
+    "author": "Vladimir Fojtik <fojtik.v@gmail.com>",
     "private": true,
     "scripts": {
         "dev": "nuxt-ts",
