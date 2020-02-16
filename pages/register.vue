@@ -17,6 +17,7 @@
 
 <script lang="ts">
     import { Vue, Component } from 'vue-property-decorator';
+    import { parseResponseError } from '~/utils/helpers/response.helper';
 
     @Component({
         layout: 'auth',
@@ -95,7 +96,8 @@
                         this.$message.success('Registration completed.');
                         this.$router.push('/login');
                     } catch (error) {
-                        this.$message.error(error.response.data.message);
+                        this.$sentry.captureException(error);
+                        this.$message.error(parseResponseError(error));
                     }
                 }
             });

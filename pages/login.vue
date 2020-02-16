@@ -15,6 +15,7 @@
 
 <script lang="ts">
     import { Vue, Component } from 'vue-property-decorator';
+    import { parseResponseError } from '~/utils/helpers/response.helper';
 
     @Component({
         layout: 'auth',
@@ -68,11 +69,10 @@
                                 password: values.password
                             }
                         });
-                        await this.$message.success(
-                            'You have been successfully logged into system.'
-                        );
+                        this.$message.success('You have been successfully logged into system.');
                     } catch (error) {
-                        await this.$message.error(error.response.data.message);
+                        this.$sentry.captureException(error);
+                        this.$message.error(parseResponseError(error));
                     }
                 }
             });

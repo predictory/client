@@ -49,20 +49,11 @@ const nuxtConfig: Configuration = {
     /*
      ** Nuxt.js dev-modules
      */
-    buildModules: [
-        '@nuxtjs/eslint-module',
-        '@nuxtjs/stylelint-module',
-        '@nuxt/typescript-build'
-    ],
+    buildModules: ['@nuxtjs/eslint-module', '@nuxtjs/stylelint-module', '@nuxt/typescript-build'],
     /*
      ** Nuxt.js modules
      */
-    modules: [
-        '@nuxtjs/axios',
-        '@nuxtjs/pwa',
-        '@nuxtjs/style-resources',
-        '@nuxtjs/auth'
-    ],
+    modules: ['@nuxtjs/axios', '@nuxtjs/pwa', '@nuxtjs/style-resources', '@nuxtjs/auth', '@nuxtjs/sentry'],
     /*
      ** Axios module configuration
      ** See https://axios.nuxtjs.org/options
@@ -98,6 +89,9 @@ const nuxtConfig: Configuration = {
      */
     styleResources: {
         scss: './assets/css/variables.scss'
+    },
+    sentry: {
+        dsn: 'https://040940ea501f4c07939e9e4e606dc6c2@sentry.io/2570457'
     },
     router: {
         middleware: ['auth']
