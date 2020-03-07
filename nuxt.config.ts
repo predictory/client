@@ -49,7 +49,12 @@ const nuxtConfig: Configuration = {
     /*
      ** Nuxt.js dev-modules
      */
-    buildModules: ['@nuxtjs/eslint-module', '@nuxtjs/stylelint-module', '@nuxt/typescript-build'],
+    buildModules: [
+        '@nuxtjs/eslint-module',
+        '@nuxtjs/stylelint-module',
+        '@nuxt/typescript-build',
+        '@nuxtjs/tailwindcss'
+    ],
     /*
      ** Nuxt.js modules
      */
