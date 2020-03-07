@@ -41,11 +41,11 @@ const nuxtConfig: Configuration = {
     /*
      ** Global CSS
      */
-    css: ['ant-design-vue/dist/antd.css', './assets/css/global.scss'],
+    css: ['./assets/css/main.css'],
     /*
      ** Plugins to load before mounting the App
      */
-    plugins: ['@/plugins/antd-ui', '@/plugins/services'],
+    plugins: ['@/plugins/services'],
     /*
      ** Nuxt.js dev-modules
      */
@@ -53,7 +53,7 @@ const nuxtConfig: Configuration = {
     /*
      ** Nuxt.js modules
      */
-    modules: ['@nuxtjs/axios', '@nuxtjs/pwa', '@nuxtjs/style-resources', '@nuxtjs/auth', '@nuxtjs/sentry'],
+    modules: ['@nuxtjs/axios', '@nuxtjs/pwa', '@nuxtjs/auth', '@nuxtjs/sentry'],
     /*
      ** Axios module configuration
      ** See https://axios.nuxtjs.org/options
@@ -84,12 +84,6 @@ const nuxtConfig: Configuration = {
      ** Build configuration
      */
     build: {},
-    /*
-     ** Style resources
-     */
-    styleResources: {
-        scss: './assets/css/variables.scss'
-    },
     sentry: {
         dsn: 'https://040940ea501f4c07939e9e4e606dc6c2@sentry.io/2570457'
     },

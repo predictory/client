@@ -24,7 +24,7 @@
     export default class Index extends Vue {}
 </script>
 
-<style lang="scss">
+<style>
     .container {
         margin: 0 auto;
         min-height: 100vh;
