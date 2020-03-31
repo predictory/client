@@ -41,7 +41,7 @@ const nuxtConfig: Configuration = {
     /*
      ** Global CSS
      */
-    css: ['./assets/css/main.css'],
+    css: ['./assets/css/main.scss'],
     /*
      ** Plugins to load before mounting the App
      */
@@ -53,7 +53,7 @@ const nuxtConfig: Configuration = {
     /*
      ** Nuxt.js modules
      */
-    modules: ['@nuxtjs/axios', '@nuxtjs/pwa', '@nuxtjs/auth', '@nuxtjs/sentry'],
+    modules: ['@nuxtjs/axios', '@nuxtjs/pwa', '@nuxtjs/auth', '@nuxtjs/sentry', 'bootstrap-vue/nuxt'],
     /*
      ** Axios module configuration
      ** See https://axios.nuxtjs.org/options
@@ -86,6 +86,10 @@ const nuxtConfig: Configuration = {
     build: {},
     sentry: {
         dsn: 'https://040940ea501f4c07939e9e4e606dc6c2@sentry.io/2570457'
+    },
+    bootstrapVue: {
+        bootstrapCSS: false, // Or `css: false`
+        bootstrapVueCSS: false // Or `bvCSS: false`
     },
     router: {
         middleware: ['auth']

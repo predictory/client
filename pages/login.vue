@@ -2,10 +2,13 @@
     div
         div(class="header")
             h1 Login
-        form(@submit.prevent="handleSubmit")
-            input(type="text", placeholder="E-mail")
-            input(type="password", placeholder="Password")
-            button(type="submit") Login
+        b-form(@submit="handleSubmit")
+            b-form-group
+                b-input(type="text", placeholder="E-mail")
+            b-form-group
+                b-input(type="password", placeholder="Password")
+            b-form-group
+                b-button(type="submit", variant="primary", block) Login
 </template>
 
 <script lang="ts">
