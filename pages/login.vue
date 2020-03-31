@@ -3,8 +3,8 @@
         div(class="header")
             h1 Login
         form(@submit.prevent="handleSubmit")
-            input(type="text", placeholder="E-mail")
-            input(type="password", placeholder="Password")
+            t-input(type="text", placeholder="E-mail")
+            t-input(type="password", placeholder="Password")
             button(type="submit") Login
 </template>
 
