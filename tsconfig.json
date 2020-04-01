@@ -10,12 +10,13 @@
         "strict": true,
         "noEmit": true,
         "experimentalDecorators": true,
+        "resolveJsonModule": true,
         "baseUrl": ".",
         "paths": {
             "~/*": ["./*"],
             "@/*": ["./*"]
         },
-        "types": ["@types/node", "@nuxt/types", "@nuxtjs/axios", "@nuxtjs/sentry"]
+        "types": ["@types/node", "@nuxt/types", "@nuxtjs/axios", "@nuxtjs/sentry", "vee-validate/types", "bootstrap-vue/src"]
     },
     "exclude": ["node_modules"]
 }

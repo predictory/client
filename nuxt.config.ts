@@ -45,7 +45,7 @@ const nuxtConfig: Configuration = {
     /*
      ** Plugins to load before mounting the App
      */
-    plugins: ['@/plugins/services'],
+    plugins: ['@/plugins/services', '@/plugins/validate'],
     /*
      ** Nuxt.js dev-modules
      */
