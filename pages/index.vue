@@ -40,7 +40,7 @@
         display: block;
         font-weight: 300;
         font-size: 100px;
-        color: $base-color;
+        color: #ccc;
         letter-spacing: 1px;
     }
 
