@@ -78,6 +78,11 @@ const nuxtConfig: Configuration = {
                     }
                 }
             }
+        },
+        redirect: {
+            login: '/login',
+            logout: '/login',
+            home: '/'
         }
     },
     /*

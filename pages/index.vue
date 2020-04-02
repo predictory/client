@@ -10,10 +10,11 @@
 </template>
 
 <script>
-    import { Vue, Component } from 'vue-property-decorator';
+    import { Vue, Component } from 'nuxt-property-decorator';
     import Logo from '~/components/Logo.vue';
 
     @Component({
+        auth: false,
         components: {
             Logo
         },

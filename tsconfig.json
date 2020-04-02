@@ -16,7 +16,14 @@
             "~/*": ["./*"],
             "@/*": ["./*"]
         },
-        "types": ["@types/node", "@nuxt/types", "@nuxtjs/axios", "@nuxtjs/sentry", "vee-validate/types", "bootstrap-vue/src"]
+        "types": [
+            "@types/node",
+            "@nuxt/types",
+            "@nuxtjs/axios",
+            "@nuxtjs/sentry",
+            "vee-validate/types",
+            "bootstrap-vue/src"
+        ]
     },
     "exclude": ["node_modules"]
 }
