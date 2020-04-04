@@ -1,5 +1,5 @@
 <template lang="pug">
-    b-navbar(toggleable="md", variant="dark", type="dark", sticky)
+    b-navbar(toggleable="md", variant="dark", type="dark", class="nav", sticky)
         b-navbar-brand(to="/")
             img(src="@/assets/images/logo-blue.png", alt="Predictory", width="120")
         b-navbar-toggle(target="nav-collapse")
@@ -17,9 +17,10 @@
                         :key="genre.id",
                         :to="`/series/${genre.name.toLowerCase()}`"
                     ) {{ genre.name }}
-            b-navbar-nav(class="ml-auto")
+            b-navbar-nav(class="ml-auto user")
                 template(v-if="isLogged")
-                    b-nav-text Logged user:
+                    b-nav-text
+                        b-icon-person-fill
                     b-nav-item-dropdown(:text="userFullName", right)
                         b-dropdown-item(@click="handleLogout") Logout
                 b-nav-text(v-else)
@@ -32,8 +33,12 @@
     import UserMixin from '~/mixins/UserMixin';
     import { Component, mixins } from 'nuxt-property-decorator';
     import { mapGetters } from 'vuex';
+    import { BIconPersonFill } from 'bootstrap-vue';
 
     @Component({
+        components: {
+            BIconPersonFill
+        },
         computed: {
             ...mapGetters({
                 moviesGenres: 'genres/moviesGenres',
@@ -52,3 +57,27 @@
         }
     }
 </script>
+
+<style lang="scss" scoped>
+    .navbar /deep/ {
+        .dropdown-item {
+            background: $gray-800 !important;
+            color: $light !important;
+        }
+        .dropdown-item:hover {
+            background: $primary !important;
+        }
+        .navbar-nav .dropdown-menu {
+            background-color: $gray-800 !important;
+        }
+    }
+    .user {
+        a:hover {
+            text-decoration: none;
+            color: $primary !important;
+        }
+        span {
+            color: $gray-700;
+        }
+    }
+</style>
