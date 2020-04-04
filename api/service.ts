@@ -1,7 +1,7 @@
 import { NuxtAxiosInstance } from '@nuxtjs/axios';
 
 export default class Service {
-    private readonly api: NuxtAxiosInstance;
+    protected readonly api: NuxtAxiosInstance;
     protected resource: string = '/';
 
     constructor(api: NuxtAxiosInstance) {
@@ -10,5 +10,13 @@ export default class Service {
 
     async create(payload: any): Promise<any> {
         await this.api.$post(this.resource, payload);
+    }
+
+    async findAll(): Promise<any> {
+        await this.api.$get(this.resource);
+    }
+
+    async findById(id: string | number): Promise<any> {
+        await this.api.$get(`${this.resource}/${id}`);
     }
 }
