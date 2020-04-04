@@ -1,7 +1,7 @@
 <template lang="pug">
     #main
         navbar
-        b-container(:fluid="true")
+        b-container(id="content", class="py-4", fluid)
             b-row
                 b-col
                     nuxt
@@ -22,5 +22,7 @@
 <style lang="scss">
     #main {
         min-height: 100vh;
+        background: $gray-900;
+        color: $light;
     }
 </style>
