@@ -20,11 +20,19 @@ export const mutations: MutationTree<RootState> = {
 
 export const actions: ActionTree<RootState, RootState> = {
     async fetchMoviesGenres({ commit }) {
-        const genres = await this.$services.genresService.findByType('movie');
-        commit('setMoviesGenres', genres);
+        try {
+            const genres = await this.$services.genresService.findByType('movie');
+            commit('setMoviesGenres', genres);
+        } catch (error) {
+            this.$sentry.captureException(error);
+        }
     },
     async fetchSeriesGenres({ commit }) {
-        const genres = await this.$services.genresService.findByType('series');
-        commit('setSeriesGenres', genres);
+        try {
+            const genres = await this.$services.genresService.findByType('series');
+            commit('setSeriesGenres', genres);
+        } catch (error) {
+            this.$sentry.captureException(error);
+        }
     }
 };

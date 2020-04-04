@@ -41,7 +41,7 @@
         display: block;
         font-weight: 300;
         font-size: 100px;
-        color: #ccc;
+        color: $info;
         letter-spacing: 1px;
     }
 

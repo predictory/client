@@ -53,7 +53,14 @@ const nuxtConfig: Configuration = {
     /*
      ** Nuxt.js modules
      */
-    modules: ['@nuxtjs/axios', '@nuxtjs/pwa', '@nuxtjs/auth', '@nuxtjs/sentry', 'bootstrap-vue/nuxt'],
+    modules: [
+        '@nuxtjs/axios',
+        '@nuxtjs/pwa',
+        '@nuxtjs/auth',
+        '@nuxtjs/sentry',
+        'bootstrap-vue/nuxt',
+        '@nuxtjs/style-resources'
+    ],
     /*
      ** Axios module configuration
      ** See https://axios.nuxtjs.org/options
@@ -95,6 +102,13 @@ const nuxtConfig: Configuration = {
     bootstrapVue: {
         bootstrapCSS: false, // Or `css: false`
         bootstrapVueCSS: false // Or `bvCSS: false`
+    },
+    styleResources: {
+        scss: [
+            '@/assets/css/variables.scss',
+            '@/node_modules/bootstrap/scss/bootstrap.scss',
+            '@/node_modules/bootstrap-vue/src/index.scss'
+        ]
     },
     router: {
         middleware: ['auth']
