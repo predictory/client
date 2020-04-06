@@ -17,12 +17,10 @@
     import { Vue, Component } from 'nuxt-property-decorator';
     import { required, email } from 'vuelidate/lib/validators';
     import { parseResponseError } from '~/utils/helpers/response.helper';
+    import { Meta } from '~/utils/decorators/meta.decorator';
 
     @Component({
         layout: 'auth',
-        head: {
-            title: 'Login'
-        },
         validations: {
             email: { required, email },
             password: { required }
@@ -31,6 +29,13 @@
     export default class Login extends Vue {
         email = '';
         password = '';
+
+        @Meta
+        head() {
+            return {
+                title: 'Home'
+            };
+        }
 
         validateState(name: string) {
             const { $dirty, $error } = this.$v[name];

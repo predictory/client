@@ -5,12 +5,17 @@
 
 <script>
     import { Vue, Component } from 'nuxt-property-decorator';
+    import { Meta } from '~/utils/decorators/meta.decorator';
 
     @Component({
-        auth: false,
-        head: {
-            title: 'Home'
-        }
+        auth: false
     })
-    export default class Index extends Vue {}
+    export default class Index extends Vue {
+        @Meta
+        head() {
+            return {
+                title: 'Home'
+            };
+        }
+    }
 </script>

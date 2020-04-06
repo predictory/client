@@ -30,7 +30,7 @@
 </template>
 
 <script lang="ts">
-    import UserMixin from '~/mixins/UserMixin';
+    import UserMixin from '~/utils/mixins/user.mixin';
     import { Component, mixins } from 'nuxt-property-decorator';
     import { mapGetters } from 'vuex';
     import { BIconPersonFill } from 'bootstrap-vue';

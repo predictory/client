@@ -12,8 +12,8 @@ export default class Service {
         await this.api.$post(this.resource, payload);
     }
 
-    async findAll(): Promise<any> {
-        await this.api.$get(this.resource);
+    async findAll(take: number = 10, skip: number = 0): Promise<any> {
+        await this.api.$get(`${this.resource}?take=${take}&skip=${skip}`);
     }
 
     async findById(id: string | number): Promise<any> {
