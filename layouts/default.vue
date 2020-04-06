@@ -19,10 +19,14 @@
     export default class DefaultLayout extends Vue {}
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
     #main {
         min-height: 100vh;
         background: $gray-900;
         color: $light;
+
+        .navbar {
+            background: $gray-900 !important;
+        }
     }
 </style>

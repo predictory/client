@@ -60,8 +60,6 @@
 
 <style lang="scss" scoped>
     .navbar /deep/ {
-        background: $gray-900 !important;
-
         .dropdown-item {
             background: $gray-800 !important;
             color: $light !important;
