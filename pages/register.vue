@@ -26,9 +26,6 @@
     @Component({
         layout: 'auth',
         auth: false,
-        head: {
-            title: 'Registration'
-        },
         validations: {
             name: { required },
             surname: { required },
@@ -41,6 +38,12 @@
         surname = '';
         email = '';
         password = '';
+
+        head() {
+            return {
+                title: 'Registration'
+            };
+        }
 
         validateState(name: string) {
             const { $dirty, $error } = this.$v[name];

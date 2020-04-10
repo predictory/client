@@ -17,7 +17,6 @@
     import { Vue, Component } from 'nuxt-property-decorator';
     import { required, email } from 'vuelidate/lib/validators';
     import { parseResponseError } from '~/utils/helpers/response.helper';
-    import { Meta } from '~/utils/decorators/meta.decorator';
 
     @Component({
         layout: 'auth',
@@ -30,10 +29,9 @@
         email = '';
         password = '';
 
-        @Meta
         head() {
             return {
-                title: 'Home'
+                title: 'Login'
             };
         }
 

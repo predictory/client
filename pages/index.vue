@@ -3,15 +3,13 @@
         h1 Newest
 </template>
 
-<script>
+<script lang="ts">
     import { Vue, Component } from 'nuxt-property-decorator';
-    import { Meta } from '~/utils/decorators/meta.decorator';
 
     @Component({
         auth: false
     })
     export default class Index extends Vue {
-        @Meta
         head() {
             return {
                 title: 'Home'
