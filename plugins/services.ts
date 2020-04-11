@@ -1,10 +1,12 @@
 import { Plugin } from '@nuxt/types';
 import UsersService from '~/api/users.service';
 import GenresService from '~/api/genres.service';
+import ItemsService from '~/api/items.service';
 
 interface Services {
     usersService: UsersService;
     genresService: GenresService;
+    itemsService: ItemsService;
 }
 
 declare module 'vue/types/vue' {
@@ -28,10 +30,12 @@ declare module 'vuex/types/index' {
 const plugin: Plugin = (ctx, inject) => {
     const usersService = new UsersService(ctx.$axios);
     const genresService = new GenresService(ctx.$axios);
+    const itemsService = new ItemsService(ctx.$axios);
 
     const services: Services = {
         usersService,
-        genresService
+        genresService,
+        itemsService
     };
 
     inject('services', services);

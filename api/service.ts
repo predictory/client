@@ -13,10 +13,14 @@ export default class Service {
     }
 
     async findAll(take: number = 10, skip: number = 0): Promise<any> {
-        await this.api.$get(`${this.resource}?take=${take}&skip=${skip}`);
+        const items = await this.api.$get(`${this.resource}?take=${take}&skip=${skip}`);
+
+        return items;
     }
 
     async findById(id: string | number): Promise<any> {
-        await this.api.$get(`${this.resource}/${id}`);
+        const item = await this.api.$get(`${this.resource}/${id}`);
+
+        return item;
     }
 }
