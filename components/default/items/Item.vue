@@ -1,9 +1,11 @@
 <template lang="pug">
-    b-col(lg="2", md="3", sm="4", cols="6" class="mb-4", :id="`item-${item.id}`")
-        .crop
-            b-img(:src="itemImage", :alt="item.title", fluid)
+    b-col(lg="2", md="3", sm="4", cols="6" class="mb-4")
+        .crop(:id="`item-${item.id}`")
+            nuxt-link(:to="`item/${item.id}`")
+                b-img(:src="itemImage", :alt="item.title", fluid)
         .caption(class="mt-2")
-            p(class="mb-1") {{ item.title }}
+            p(class="mb-1")
+                nuxt-link(:to="`item/${item.id}`") {{ item.title }}
             p(class="mb-0 additional-info") {{ item.year }}
         b-popover(:target="`item-${item.id}`", triggers="hover")
             template(v-slot:title)
@@ -43,6 +45,15 @@
     .additional-info {
         color: $gray-600;
         font-size: 0.8rem;
+    }
+    .caption {
+        a {
+            color: $light;
+            text-decoration: none;
+        }
+        a:hover {
+            color: $primary;
+        }
     }
     @media screen and (max-width: 1200px) {
         .crop {
